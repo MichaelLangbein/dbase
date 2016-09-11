@@ -9,31 +9,41 @@ typedef struct node {
 
 
 
-void freeTree(node * root){
-	if(root != 0){
-		freeTree(root->lwr);
-		freeTree(root->hgr);
-		free(root);
+void freeTree(node * nextnode){
+	if(nextnode != 0){
+		freeTree(nextnode->lwr);
+		freeTree(nextnode->hgr);
+		free(nextnode);
 	}else{
-		free(root);
+		free(nextnode);
 	}
 }
 
-void insertInTree(int key, node * nextnode){
 
+void insertInTree(int key, node * nextnode){
 	if(nextnode == 0){
 	
 		nextnode = (struct node*) malloc( sizeof( struct node ) );
 		nextnode->key_val = key;
 		nextnode->lwr = 0;    
 		nextnode->hgr = 0; 
-	}
-	else{
+	}else{
 		if(key < nextnode->key_val){
 			insertInTree(key, nextnode->lwr);
-		}
-		else{
+		}else{
 			insertInTree(key, nextnode->hgr);
+		}
+	}
+}
+
+node * findNode(int key, node * nextnode){
+	if(nextnode->key_val = key){
+		return nextnode;
+	}else{
+		if(key < nextnode->key_val){
+			findNode(key, nextnode->lwr);
+		}else{
+			findNode(key, nextnode->hgr);
 		}
 	}
 }
