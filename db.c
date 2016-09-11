@@ -25,3 +25,14 @@ row * scanIndexForVal(int valc1, node * root){
 	}
 	return nextnode.rowp;
 }
+
+void createIndex(row sortedrows[], int numRows){
+	int r;
+	for(r=0; r<=numRows; r++){
+		
+	}
+}
+
+void heapsort(row unsortedrows[]){
+
+}
