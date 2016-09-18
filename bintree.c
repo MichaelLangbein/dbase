@@ -1,11 +1,4 @@
-#include <stdlib.h>
-
-
-typedef struct node {
-	struct node * lwr;
-	struct node * hgr;
-	int key_val;
-} node;
+#include "bintree.h" 
 
 
 

@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "hash.h"
 
 /*
  * Funktionsweise:
@@ -21,18 +19,6 @@
  * key to hash
  * foreach element in linkedlist: key == gesuchter key?
  */
-
-typedef struct element{
-	char * key;
-	char * value;
-	struct element * next_element;
-} element;
-
-
-typedef struct hashtable{
-	int max_nr_bins;
-	element ** elements;
-} hashtable;
 
 
 int hash_function(char * key, int max_nr_bins) {
@@ -76,19 +62,7 @@ char * hash_get(hashtable * ht, char * key){
 }
 
 void hash_free_element(hashtable * ht, char * key){
-			
+
 }
 
 void hash_free(hashtable * ht){}
-
-int main(){
-	hashtable ht;
-	ht.max_nr_bins = 5;
-	element e1 = {"alpha", "value one"};
-	element e2 = {"beta", "value one"};
-	element e3 = {"gamma", "value one"};
-	element e4 = {"epsilon", "value one"};
-	element e5 = {"delta", "value one"};
-	element e6 = {"theta", "value one"};
-	return 0;
-}
